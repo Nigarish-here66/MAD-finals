@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 export default function DessertsList({ data }) {
   const lowCalorieDesserts = data
@@ -9,10 +9,20 @@ export default function DessertsList({ data }) {
   return (
     <View>
       {lowCalorieDesserts.map((dessert, index) => (
-        <Text key={index}>
+        <Text key={index} style={styles.desserts}>
           {dessert.name} - {dessert.calories} cal
         </Text>
       ))}
     </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  desserts: {
+    fontSize: 16,
+    textAlign: "center",
+    fontWeight: "light",
+    marginBottom: 5,
+    marginTop: 5,
+  },
+});

@@ -1,4 +1,4 @@
-import {Text,View} from 'react-native'
+import {Text,View,StyleSheet} from 'react-native'
 import DessertsList from "./DessertsList";
 console.log(desserts)
 const desserts = [
@@ -27,10 +27,20 @@ const desserts = [
 function App() {
   return (
     <View>
-      <Text>List of low calorie desserts:</Text>
+      <Text style={styles.header}>List of low calorie desserts:</Text>
       <DessertsList data={desserts} />
     </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  header: {
+    fontSize: 24,
+    textAlign: "center",
+    fontWeight: "bold",
+    marginBottom: 30,
+    marginTop: 70,
+  },
+});
 
 export default App;
